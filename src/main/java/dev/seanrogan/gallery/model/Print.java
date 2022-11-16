@@ -1,4 +1,11 @@
 package dev.seanrogan.gallery.model;
 
-public class Print {
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.Entity;
+
+@RequiredArgsConstructor
+@Entity
+public class Print extends Product{
+
 }

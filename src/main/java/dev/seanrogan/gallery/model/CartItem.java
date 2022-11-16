@@ -9,24 +9,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-@RequiredArgsConstructor
 @Entity
+@RequiredArgsConstructor
 @Getter
 @Setter
-public abstract class Product {
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(nullable = false, unique = true)
     private Long id;
-    private String productName;
-    private String description;
-    private String creator;
-    private String category;
-    private String genre;
-    private String dimensions;
-    private int quantityRemainingInStock;
 
+    @ManyToOne
+    private Product product;
 
-
+    private int quantity;
 }

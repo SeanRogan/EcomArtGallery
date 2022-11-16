@@ -1,4 +1,11 @@
 package dev.seanrogan.gallery.model;
 
-public class Painting {
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.Entity;
+
+@RequiredArgsConstructor
+@Entity
+public class Painting extends Product{
+
 }

@@ -1,4 +1,14 @@
 package dev.seanrogan.gallery.model;
 
-public class Sculpture {
+import lombok.RequiredArgsConstructor;
+import javax.persistence.Entity;
+
+@RequiredArgsConstructor
+@Entity
+public class Sculpture extends Product{
+
+    private String material;
+    private float weight;
+
+
 }
