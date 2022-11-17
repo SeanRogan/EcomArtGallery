@@ -25,7 +25,7 @@ public class Profile {
     @Temporal(TemporalType.TIMESTAMP)
     private Date memberSince;
     private boolean isSeller;
-@OneToOne
-@MapsId
+    @OneToOne
+    @MapsId
     private ShoppingCart currentCart;
 }

@@ -1,5 +1,6 @@
 package dev.seanrogan.gallery.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -16,6 +18,7 @@ import static javax.persistence.GenerationType.AUTO;
 @RequiredArgsConstructor
 @Table(name = "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = AUTO)
     @Column(nullable = false, unique = true)
@@ -33,5 +36,10 @@ public class User {
     @MapsId
     @OneToOne(cascade = CascadeType.ALL)
     private Profile profile;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user",
+            fetch = FetchType.LAZY)
+    private List<PurchaseOrder> orderHistory;
 
 }
