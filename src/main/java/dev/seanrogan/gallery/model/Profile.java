@@ -28,4 +28,5 @@ public class Profile {
     @OneToOne
     @MapsId
     private ShoppingCart currentCart;
+    //need something like wishlist, favorite artists, maybe eventually something to track genre preferences
 }

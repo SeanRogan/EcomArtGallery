@@ -26,7 +26,7 @@ import java.util.Optional;
 @Transactional
 @Slf4j
 @RequiredArgsConstructor
-public class UserServiceImpl extends UserService implements UserDetailsService {
+public class UserServiceImpl implements UserDetailsService, UserService {
 
     private final RoleRepository roleRepo;
     private final UserRepository userRepo;

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +38,7 @@ public class ShoppingCart {
     //the set of products in the cart
     @Column(name = "cart_contents")
     @OneToMany
-    private Set<CartItem> productsInCart;
+    private Set<OrderItem> productsInCart;
 
     @Column(name = "item_qty")
     private int numberOfItemsInCart;

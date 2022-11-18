@@ -33,6 +33,6 @@ public class PurchaseOrder {
     @JoinColumn(name = "purchaser_user_id", referencedColumnName = "id")
     private User user;
     @OneToMany(mappedBy = "id" , fetch = FetchType.LAZY)
-    private List<CartItem> itemsOrdered;
+    private List<OrderItem> itemsOrdered;
 
 }

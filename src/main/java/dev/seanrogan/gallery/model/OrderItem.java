@@ -17,7 +17,7 @@ import javax.persistence.OneToOne;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class CartItem {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
